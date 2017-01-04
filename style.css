@@ -5,8 +5,7 @@ body {
   font-family: "Proxima Nova", 'Montserrat', Arial;
   background: #505050;
   color:#00001f;
-  /*width:auto;*/
-  width:250px;
+  width:auto;
   height: inherit;
   padding: 0px;
     margin: 0px;
@@ -30,7 +29,7 @@ input:hover{outline:none;}
 }
 
 .main .item {
-  background:#CFD3DC;
+  background:#EDEDED;
   padding: 8px 15px;
   border-bottom: 1px solid #A8ADB4;
   height: 75px;
@@ -142,6 +141,7 @@ input:hover{outline:none;}
 .head {
   background:#2F2F2F;
   position: relative;
+  display: none;
 }
 
 .head .title {
@@ -170,7 +170,7 @@ input:hover{outline:none;}
   color: #FFFFFF;
   background: #505050;
   padding: 18px 20px;
-  display: none;
+  /*display: none;*/
 }
 
 .footer { 
@@ -210,9 +210,10 @@ input:hover{outline:none;}
 }
 
 .footer .notes {
-  padding-top: 15px;
-    text-align: right;
-    margin-bottom: -10px;
+	padding-top: 15px;
+	text-align: right;
+	margin-bottom: -10px;
+	display: none;
 }
 
 /*typeahead dropdown*/
