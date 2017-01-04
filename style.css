@@ -5,7 +5,8 @@ body {
   font-family: "Proxima Nova", 'Montserrat', Arial;
   background: #505050;
   color:#00001f;
-  width:500px;
+  /*width:auto;*/
+  width:250px;
   height: inherit;
   padding: 0px;
     margin: 0px;
@@ -30,7 +31,7 @@ input:hover{outline:none;}
 
 .main .item {
   background:#CFD3DC;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-bottom: 1px solid #A8ADB4;
   height: 75px;
 }
@@ -49,14 +50,14 @@ input:hover{outline:none;}
 }
 
 .main .item .part3 .clock{
-  margin-top: 15px;
+  margin-top: 5px;
   display: block;
 }
 
 .main .item .part3 .clock .unit
 {
-  width: 60px;
-  padding: 10px 5px;
+  width: 35px;
+  padding: 0px 0px;
   font-family: "Proxima Nova", 'Montserrat', Arial;
   font-size: 20px;
   text-align: center;
@@ -72,9 +73,9 @@ input:hover{outline:none;}
 .main .item .part3 .clock .unit-ampm
 {
     width: 60px;
-    padding: 10px 5px;
+    padding: 10px 2px;
     font-family: "Proxima Nova", 'Montserrat', Arial;
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
     color: #777;
     position: relative;
@@ -86,12 +87,12 @@ input:hover{outline:none;}
 
 .main .item .part3 .clock .unit-ampm .am{
     position: absolute;;
-    top: -2px;
+    top: 1px;
 }
 
 .main .item .part3 .clock .unit-ampm .pm{
     position: inherit;;
-    top: 10px;
+    top: 6px;
 }
 
 .main .item .part3 .clock .active{
@@ -99,14 +100,14 @@ input:hover{outline:none;}
 }
 
 .main .item .part1 .title {
-  font-size: 24px;
+  font-size: 20px;
   display: block;
 }
 
 .main .item .part1 .desc {
   color:#676E79;
   display: block;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .main .item .part1 .delete, .main .item .part3 .edit {
@@ -114,21 +115,23 @@ input:hover{outline:none;}
   text-decoration: underline;
   font-style: italic;
   cursor: pointer;
+  font-size: 10px;
 }
 
 .main .item .part1 .delete:hover, .main .item .part3 .edit:hover  {
-  color:#EC4989;
+  color:#0ABE51;
 }
 
 .main .item .part3 .time {
-  font-size: 32px;
-  padding-top: 10px;
+  font-size: 20px;
+  padding-top: 5px;
   display: block;
   cursor: pointer;
 }
 
 .main .item img{
     opacity: 0.5;
+    zoom: 0.8;
 }
 
 .main .item img:hover {
@@ -142,7 +145,7 @@ input:hover{outline:none;}
 }
 
 .head .title {
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -166,7 +169,8 @@ input:hover{outline:none;}
 .head, .footer {
   color: #FFFFFF;
   background: #505050;
-  padding: 25px 20px;
+  padding: 18px 20px;
+  display: none;
 }
 
 .footer { 
@@ -177,14 +181,14 @@ input:hover{outline:none;}
   background:#2F2F2F;
   margin: 0 auto;
   width: 175px;
-  height: 35px;
+  height: 25px;
 }
 
 .footer .type span{ 
   float: left;
   text-align: center;
   width: 50%; 
-  padding: 10px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
   color:#777;
 }
 
@@ -202,7 +206,7 @@ input:hover{outline:none;}
 }
 
 .footer .notes a:hover {
-  color:#EC4989;
+  color:#0ABE51;
 }
 
 .footer .notes {
@@ -246,7 +250,7 @@ input:hover{outline:none;}
   }
 
   .custom-popup-wrapper ul li a:hover, .uib-typeahead-match.active {
-    background: #EC4989;
+    background: #0ABE51;
     color:#fff !important;
   }
 
@@ -256,9 +260,9 @@ input:hover{outline:none;}
 
   .custom-popup-wrapper ul li a{
     text-decoration: none;    
-    font-size: 14px;
+    font-size: 12px;
     display: block;
-    padding-left: 22px;
+    padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
@@ -270,10 +274,11 @@ input:hover{outline:none;}
   }
 
   #search {
-    padding: 15px 20px;
+    padding: 10px 20px;
     width: 100%;    
     border: 0px;
     border-top: 1px solid #A8ADB4;
+    font-size: 12px;
   }
 
 .footer .type .selected {
