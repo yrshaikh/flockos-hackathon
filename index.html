@@ -1,0 +1,77 @@
+  <html ng-app="timezoneApp">
+  <head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css"><link>
+  </head>
+	<body ng-controller="mainController" class="ng-cloak">
+		<div class="head">
+			<div class="title">Timezone Convertor</div>	
+		</div>
+		<div class="main">
+			<div class="container-fluid typeahead-demo">			    
+			    <input id="search" type="text" ng-model="selected" placeholder="Add Time Zone, City or Town" uib-typeahead="tz as tz.Name for tz in getTimeZone($viewValue)" typeahead-popup-template-url="template.html" class="form-control">
+			</div>
+			<div ng-repeat="item in selectedTimezones track by $index" class="item">
+				<span class="part1">
+					<span class="title">{{item.Abbreviation}}</span>
+					<span class="desc">{{item.Name}}</span>	
+					<span class="desc">UTC {{item.Offset}}</span>					
+				</span>
+				<span class="part3">
+					<span ng-hide="item.edit == true" class="time">{{item.Display}}</span>
+					<span class="clock" ng-show="item.edit == true">
+						<input class="unit" type="text" ng-model="item.editObject.hour" />
+						<input class="unit" type="text" ng-model="item.editObject.minute" />
+                        <span class="unit-ampm" ng-if="timeformat=='ampm'">
+                            <span ng-click="item.editObject.a = 'AM'" class="am" ng-class="{ 'active' : item.editObject.a == 'AM' }">
+                                AM
+                            </span>
+                            <span ng-click="item.editObject.a = 'PM'" class="pm" ng-class="{ 'active' : item.editObject.a == 'PM' }">
+                                PM
+                            </span>
+						</span>
+					</span>
+					<span ng-show="!item.edit || item.edit == false" class="edit" ng-click="edit(item)"><img src="icons/edit.png" title="edit time ?" /></span>
+					<span ng-show="!item.edit || item.edit == false" ng-click="remove(item);" class="delete" ng-if="$index != 0"><img src="icons/delete.png" title="remove this timezone ?" /></span>
+					<span ng-show="item.edit == true" class="edit" ng-click="save(item)">save</span>
+					<span ng-show="item.edit == true" class="edit" ng-click="cancel(item)">cancel</span>
+				</span>				
+			</div>
+		</div>
+		<div class="footer">
+			<div class="type black-border">
+				<span ng-class="{selected: timeformat=='ampm'}" class="pull-left" ng-click="timeformat='ampm';">AM/PM</span>
+				<span ng-class="{selected: timeformat=='24hr'}" class="pull-left" ng-click="timeformat='24hr';">24-Hours</span>
+			</div>
+			<div class="notes">
+				<a target="_blank" href="https://github.com/yrshaikh/Timezone-Convertor">Homepage</a> |
+				<a target="_blank" href="https://github.com/yrshaikh/Timezone-Convertor">About</a> |
+				<a target="_blank" href="https://github.com/yrshaikh/Timezone-Convertor/issues">Report Bug</a>
+			</div>
+		</div>
+		<script type="text/ng-template" id="template.html">
+		  <div class="custom-popup-wrapper"
+		     ng-style="{top: position().top+'px', left: position().left+'px'}"
+		     style="display: block;"
+		     ng-show="isOpen() && !moveInProgress"
+		     aria-hidden="{{!isOpen()}}">
+		    <ul class="dropdown-menu" role="listbox">
+		      <li class="uib-typeahead-match" ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }"
+		        ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">
+		        <div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl">
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		</script>		
+		<script type="text/javascript" src="js/lib/angular.min.js"></script>
+		<script type="text/javascript" src="js/lib/ui-bootstrap-tpls-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/lib/moment.min.js"></script>
+		<script type="text/javascript" src="js/lib/moment-timezone.js"></script>
+		<script type="text/javascript" src="js/lib/underscore-min.js"></script>
+		<script type="text/javascript" src="js/app/app.js"></script>
+	    <script type="text/javascript" src="js/app/main-controller.js"></script>
+	    <script type="text/javascript" src="js/app/storage-service.js"></script>
+	    <script type="text/javascript" src="js/app/search-service.js"></script>
+	</body>
+</html>
